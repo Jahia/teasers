@@ -10,7 +10,9 @@
  <%--<jcr:nodeProperty node="${currentNode}" name="link" var="link"/>--%>
 <div class="boxteaser">
     <div class="teaser teaser-fixed-height">
-        <img src="${image.node.url}" class="floatleft" />
+    	  <c:if test="${not empty image.node.url}">
+           <img src="${image.node.url}" class="floatleft" />
+        </c:if>
         <div class="teaser-content">
             <h3 class="teaser-title title"><jcr:nodeProperty node="${currentNode}" name="jcr:title"/></h3>
             <p> ${currentNode.properties.abstract.string}</p>
